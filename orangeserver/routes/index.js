@@ -7,7 +7,7 @@ const pool=require("../pool");
 router.get("/index",(req,res)=>{
     var sql="SELECT * FROM orange_index_product";
     pool.query(sql,(err,result)=>{
-        console.log(result)
+        // console.log(result)
         if(err) throw err;
         res.send({code:1,msg:"商品查询成功",data:result});
     })
