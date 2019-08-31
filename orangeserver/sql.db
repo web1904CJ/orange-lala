@@ -1,0 +1,23 @@
+USE orange;
+#(1)创建表 orange_index_carousel
+CREATE TABLE orange_index_carousel(
+    cid INT PRIMARY KEY AUTO_INCREMENT,
+    img VARCHAR(128),
+    title VARCHAR(64),
+    href VARCHAR(128)
+);
+#(2)更新数据
+INSERT INTO `orange_index_carousel` (`cid`, `img`, `title`, `href`) VALUES ('1', 'imgs/index/carousel/carousel1.jpg', '轮播广告商品图1', NULL);
+INSERT INTO `orange_index_carousel` (`cid`, `img`, `title`, `href`) VALUES ('2', 'imgs/index/carousel/carousel2.jpg', '轮播广告商品图2', NULL);
+INSERT INTO `orange_index_carousel` (`cid`, `img`, `title`, `href`) VALUES ('3', 'imgs/index/carousel/carousel3.jpg', '轮播广告商品图3', NULL);
+INSERT INTO `orange_index_carousel` (`cid`, `img`, `title`, `href`) VALUES ('4', 'imgs/index/carousel/carousel4.jpg', '轮播广告商品图4', NULL);
+
+#(1)创建表 orange_index_product
+CREATE TABLE orange_index_product(
+    pid INT PRIMARY KEY AUTO_INCREMENT,
+    img_title VARCHAR(128),
+    imgs VARCHAR(128),
+    title VARCHAR(64),
+    price decimal(10,2),
+    href VARCHAR(128)
+);
