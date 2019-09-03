@@ -1,0 +1,77 @@
+.bgcolor{
+    background:#FD7A72 url("img/big.jpg") no-repeat 15% 0%;
+    width:100%;
+    height:500px;
+    padding-top:15px;
+}
+.logo{
+    margin-left:100px;
+}
+.gird{
+    width:360px;
+    height:480px;
+    margin-left:750px;
+    background:rgb(245,245,245);
+}
+.bt{
+    font-size:20px;
+    font-weight:bold;
+    width:100%;
+    padding-top:20px;
+    margin-bottom:15px;
+}
+.bt>span{
+    margin-left:130px;
+    margin-right:80px;
+}
+.bt>a{
+    font-size: 13px;
+}
+/*文本*/
+.text{
+    width:96%;
+    height:40px;
+    margin:5px 0 0 17px;
+}
+#uname,#upwd,#email,#upwds,#phone{
+    padding:6px 10px 6px 45px;
+    box-sizing:border-box;
+    width:88%;
+    height:100%;
+    border:0;
+    outline:0;
+}
+#uname{
+    background:#fff url("img/user.png") no-repeat 5% 50%;
+    background-size:20px 20px;
+}
+#upwd,#upwds{
+    background:#fff url("img/pwd.png") no-repeat 5% 50%;
+    background-size:20px 20px;
+}
+#email{
+    background:#fff url("img/email.png") no-repeat 5% 50%;
+    background-size:20px 20px;
+}
+#phone{
+    background:#fff url("img/phone.png") no-repeat 5% 50%;
+    background-size:20px 20px;
+}
+#uname_ok,#upwd_ok,#email_ok,#upwds_ok,#phone_ok{
+    display:none;
+}
+.err,.upwd_err,.email_err,.upwds_err,.phone_err{
+    margin:5px 0 0 17px;
+    color:yellowgreen;
+}
+.err img,.upwd_err img,.email_err img,.upwds_err img,.phone_err img{
+    display: none;
+}
+#button{
+    width:86%;
+    height:45px;
+    margin:5px 0 0 17px;
+    color:#fff;
+    background: #179DE5;
+    border:0;
+}

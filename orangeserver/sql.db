@@ -21,3 +21,31 @@ CREATE TABLE orange_index_product(
     price decimal(10,2),
     href VARCHAR(128)
 );
+
+#创建用户表 orange_user
+CREATE TABLE orange_user (
+    uid INT PRIMARY KEY AUTO_INCREMENT,
+    uname VARCHAR(32),
+    upwd VARCHAR(32),
+    upwds VARCHAR(32),
+    email VARCHAR(64),
+    uphone VARCHAR(16)
+);
+
+
+#创建用户表 orange_cart
+#id    购物车项目id
+#lid   商品id
+#price 商品价格
+#uid   当前登录用户id
+#count 购物车项目数量
+#lname  商品名称 decimal高精度的浮点数
+
+CREATE TABLE orange_cart (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    lid INT,
+    uid INT,
+    count INT,
+    lname VARCHAR(255),
+    price DECIMAL(10,2) 
+);

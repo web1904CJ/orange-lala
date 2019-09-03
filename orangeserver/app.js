@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const index=require("./routes/index");
+const user=require("./routes/user")
 // const details=require("./routes/details");
 
 /*引入路由模块*/
@@ -36,6 +37,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 /*使用路由器来管理路由*/
 app.use("/index",index);
+app.use("/user",user)
 // app.use("/details",details);
 
 

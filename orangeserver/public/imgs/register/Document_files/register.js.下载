@@ -1,0 +1,71 @@
+$("button").click(function(){
+    var uname=$("#uname").val();
+    var upwd=$("#upwd").val();
+    var email=$("#email").val();
+    var phone=$("#phone").val();
+    $.ajax({
+        type:"post",
+        url:"data/register.php",
+        dataType:"json",
+        data:{uname,upwd,email,phone},
+        success:function(data){
+            if(data.code==1){
+                alert(data.msg);
+              location.href="login.html";
+            }else{
+                alert(data.msg);
+            }
+        }
+    })
+})
+function vali(value,reg,err,ok,text){
+    if(value!=""){
+      if(reg.test(value)){
+        ok.show();
+        err.hide();
+          text.css("color","yellowgreen");
+      }else{
+        err.show();
+        ok.hide();
+        text.css("color","red");
+      }
+    }else{
+      err.show();
+      ok.hide();
+      text.css("color","red");
+    }
+}
+$("#uname").blur(function(){
+    var uname=$("#uname").val();
+    var reg=/^\w{4,12}$/;
+    vali(uname,reg,$(".err>img"),$("#uname_ok"),$(".err"));
+})
+$("#upwd").blur(function(){
+    var upwd=$("#upwd").val();
+    var reg=/^\w{6,18}$/;
+    vali(upwd,reg,$(".upwd_err>img"),$("#upwd_ok"),$(".upwd_err"));
+})
+$("#upwds").blur(function(){
+    var upwd=$("#upwd").val();
+    var upwds=$("#upwds").val();
+    if(upwd==upwds){
+        $("#upwds_ok").show();
+        $(".upwds_err>img").hide();
+          $(".upwds_err").css("color","yellowgreen");
+    }else{
+        $(".upwds_err>img").show();
+        $("#upwds_ok").hide();
+        $(".upwds_err").css("color","red");
+    }
+})
+$("#email").blur(function(){
+    var email=$("#email").val();
+    var reg=/\w[@]+/;
+    vali(email,reg,$(".email_err>img"),$("#email_ok"),$(".email_err"));
+})
+$("#phone").blur(function(){
+    var phone=$("#phone").val();
+    var reg=/^((\+86|0086)\s+)?1[34578]\d{9}$/;
+    vali(phone,reg,$(".phone_err>img"),$("#phone_ok"),$(".phone_err"));
+})
+    
