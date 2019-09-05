@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 
 const index=require("./routes/index");
 const user=require("./routes/user")
-// const details=require("./routes/details");
+const details=require("./routes/details")
+const addcart=require("./routes/addcart")
 
 /*引入路由模块*/
 
@@ -38,6 +39,7 @@ app.use(express.static('public'));
 /*使用路由器来管理路由*/
 app.use("/index",index);
 app.use("/user",user)
-// app.use("/details",details);
+app.use("/details",details);
+app.use("/addcart",addcart)
 
 

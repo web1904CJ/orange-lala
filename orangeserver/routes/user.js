@@ -25,16 +25,15 @@ router.get("/login",(req,res)=>{
     //参数方式：?uname=tom&upwd=123
     var uname=req.query.uname;
     var upwd=req.query.upwd;
-    console.log(req.body)
-    var sql="SELECT uid FROM orange_user WHERE uname=? AND upwd=md5(?)";
+    var sql="SELECT id FROM orange_user WHERE uname=? AND upwd=md5(?)";
     pool.query(sql,[uname,upwd],(err,result)=>{
         if(err) throw err;
         if(result.length==0){
             res.send({code:-1,msg:"用户名或密码错误"})
         }else{
             //登录成功 1:保存凭据在session中
-            //2：吧成功的信息发送给脚手架
-            req.session.uid=result[0].uid;
+            //2：把成功的信息发送给脚手架
+            req.session.uid=result[0].id;
             // console.log(req.session)
             res.send({code:1,msg:"登录成功"})
         }
